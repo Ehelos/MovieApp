@@ -11,7 +11,9 @@ import com.example.movieapp.searchScreen.ScreenSearch
 import kotlinx.serialization.Serializable
 
 @Serializable
-object DestinationDetailsScreen
+data class DestinationDetailsScreen(
+    val id: String
+)
 
 @Serializable
 object DestinationSearchScreen
@@ -31,7 +33,7 @@ fun AppNavGraph(
             ScreenSearch()
         }
 
-        composable<DestinationDetailsScreen> { backStackEntry ->
+        composable<DestinationDetailsScreen> {
             ScreenDetail()
         }
     }
